@@ -209,24 +209,29 @@ class UI {
 
       container.appendChild(yearActual);
 
-      meses.forEach( (mes,index) => {
+      meses.forEach( mes => {
 
         const contenedorMeses = document.createElement('DIV');
         contenedorMeses.classList.add('mes');
            const titleMes = document.createElement('P');
            titleMes.classList.add('title','mb-0');
            titleMes.textContent = mes.charAt(0).toUpperCase()+mes.slice(1); // Insertamos los nombres
+           
+           // Verificamos el mes que se va a graficar
+           const prespuestoMes = presupuesto.find( pres => pres.mes === mes );
+           const porcentaje = this.porcentajeMeses(prespuestoMes);
+           
            const divProgress = document.createElement('DIV');
            divProgress.classList.add('progress');
            divProgress.setAttribute('role', 'progressbar');
-           divProgress.setAttribute('aria-valuenow', `${this.porcentajeMeses(presupuesto[index])}`)
+           divProgress.setAttribute('aria-valuenow', `${porcentaje}`)
            divProgress.setAttribute('aria-valuemin', '0')
            divProgress.setAttribute('aria-valuemax', '100')
            divProgress.style.height = '20px';
                const divProgressBar = document.createElement('DIV');
-               divProgressBar.classList.add('progress-bar',`${this.coloresMeses(this.porcentajeMeses(presupuesto[index]))}`);
-               divProgressBar.style.width = `${this.porcentajeMeses(presupuesto[index])}%`;
-               divProgressBar.textContent = `${this.porcentajeMeses(presupuesto[index])}%`;
+               divProgressBar.classList.add('progress-bar',`${this.coloresMeses(porcentaje)}`);
+               divProgressBar.style.width = `${porcentaje}%`;
+               divProgressBar.textContent = `${porcentaje}%`;
                
           divProgress.appendChild(divProgressBar);
         contenedorMeses.appendChild(titleMes);
@@ -236,20 +241,26 @@ class UI {
         // Insertamos en el HTML
         container.appendChild(contenedorMeses);
 
+      
+
       } )
     }
 
    
     tablaHTML(tabla, tbody) {
 
+      console.log(tabla);
+
       if( tabla.length ) {
 
       tabla.forEach( (datos,index) => {
-          const { presupuesto, restante, fechaModificacion } = datos;
+          const { mes, presupuesto, restante, fechaModificacion } = datos;
 
           const tr = document.createElement('TR');
               const tdNro = document.createElement('TD');
               tdNro.textContent = (index+1)
+              const tdNameMes = document.createElement('TD');
+              tdNameMes.textContent = mes.charAt(0).toUpperCase()+mes.slice(1);
               const tdProgress = document.createElement('TD');
                   const divProgress = document.createElement('DIV');
                   divProgress.classList.add('progress');
@@ -273,7 +284,7 @@ class UI {
           
 
           tr.appendChild(tdNro);
-          tr.appendChild(tdNro);
+          tr.appendChild(tdNameMes);
           tr.appendChild(tdProgress);
           tr.appendChild(tdMontoGastado);
           tr.appendChild(tdRestante);
