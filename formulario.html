@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- LINK ICONOS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="sidemenu" class="menu-collapsed">
+        <!-- HEADER -->
+        <div id="header">
+           <div id="title">
+              <span>VIDA MRR</span>
+           </div>
+           <div id="menu-btn">
+           <div class="btn-hamburger"></div>
+           <div class="btn-hamburger"></div>
+           <div class="btn-hamburger"></div>
+          </div>
+        </div>
+    
+     
+     <!-- PROFILE -->
+     <div id="profile">
+      <div id="photo">
+          <img src="img/name.gif" alt="">
+      </div>
+      <div id="name">
+          <span>Werner Reyes</span>
+      </div>
+     </div>
+  
+     <!-- ITEMS -->
+     <div id="menu-items">
+      <div class="item active">
+          <a class="form-gastos">
+              <div class="icon">
+                <i class="bi bi-pen-fill"></i>
+              </div>
+              <div class="title">Llenar gastos</div>
+          </a>
+      </div>
+  
+      <div class="item separator"></div>
+  
+      <div class="item">
+          <a class="index-gastos">
+              <div class="icon">
+                <i class="bi bi-wallet2"></i>
+              </div>
+              <div class="title">Gastos mensuales</div>
+          </a>
+      </div>
+  
+      <div class="item separator"></div>
+  
+      <div class="item">
+          <a class="tabla-gastos">
+              <div class="icon">
+                <i class="bi bi-table"></i>
+              </div>
+              <div class="title">Ver todos los gastos</div>
+          </a>
+      </div>
+     </div>
+  
+  </div>
+
+  <div class="container formulario my-auto d-none">
+    <form id="formulario-presupuesto" class="text-center pb-3">
+        <h4 class="mt-5 p-3">Selecciona tu presupuesto</h4>
+        <div class="form-floating mb-3 mx-5">
+            <input type="number" class="form-control" id="presupuesto" placeholder="name@example.com">
+            <label for="floatingInput">Presupuesto</label>
+        </div>
+        <div class="mx-5">
+          <select class="form-select form-select-lg mb-3 mes" aria-label=".form-select-lg example">
+            <option selected>Selecciona el mes</option>
+            <option value="enero">Enero</option>
+            <option value="febrero">Febrero</option>
+            <option value="marzo">Marzo</option>
+            <option value="abril">Abril</option>
+            <option value="mayo">Mayo</option>
+            <option value="junio">Junio</option>
+            <option value="julio">Julio</option>
+            <option value="agosto">Agosto</option>
+            <option value="septiembre">Septiembre</option>
+            <option value="octubre">Octubre</option>
+            <option value="noviembre">Noviembre</option>
+            <option value="diciembre">Diciembre</option>
+           </select>
+        </div> 
+          <button type="submit" class="btn btn-primary mt-2 insertar">Insertar</button>
+          <button type="submit" class="btn btn-primary mt-2 rellenar-gastos">Rellenar gastos</button>
+    </form>
+  </div>
+      
+
+  <div class="container formulario my-auto" id="desabilitado">
+    <form id="formulario" class="text-center pb-3">
+        <h4 class="mt-5 p-3">Rellena tus gastos</h4>
+        <div class="mx-5">
+          <select class="form-select form-select-lg mb-3 mes" aria-label=".form-select-lg example">
+            <option selected>Selecciona el mes a insertar</option>
+            <option value="enero">Enero</option>
+            <option value="febrero">Febrero</option>
+            <option value="marzo">Marzo</option>
+            <option value="abril">Abril</option>
+            <option value="mayo">Mayo</option>
+            <option value="junio">Junio</option>
+            <option value="julio">Julio</option>
+            <option value="agosto">Agosto</option>
+            <option value="septiembre">Septiembre</option>
+            <option value="octubre">Octubre</option>
+            <option value="noviembre">Noviembre</option>
+            <option value="diciembre">Diciembre</option>
+           </select>
+        </div> 
+        <div class="form-floating mb-3 mx-5">
+            <input type="text" class="form-control" id="producto" placeholder="name@example.com">
+            <label for="floatingInput">Producto</label>
+        </div>
+        <div class="form-floating mb-3 mx-5 monto-gasto">
+            <input type="number" class="form-control" id="monto-gastado" placeholder="name@example.com">
+            <label for="floatingInput">Gasto</label>
+        </div>
+        <div class="mx-5">
+            <select class="form-select form-select-lg mb-3 categoria" aria-label=".form-select-lg example">
+              <option selected>Selecciona la categoria</option>
+              <option value="compras">Compras</option>
+              <option value="transporte">Transporte</option>
+              <option value="entretenimiento">Entretenimiento</option>
+              <option value="alimentacion">Alimentación</option>
+             </select>
+          </div>
+          <button type="submit" class="btn btn-primary mt-2 insertar">Insertar</button>
+          <button type="submit" class="btn btn-primary mt-2 insertar-presupuesto">Insertar presupuesto</button>
+    </form>
+  </div>
+      
+
+
+   
+  <script src="js/bootstrap.min.js"></script>
+  <script type="module" src="js/formulario.js"></script>
+  <script>
+    const btn = document.querySelector('#menu-btn');
+    const menu = document.querySelector('#sidemenu');
+
+    btn.addEventListener('click', e => {
+        menu.classList.toggle("menu-expanded");
+        menu.classList.toggle("menu-collapsed");
+
+        document.querySelector('body').classList.toggle('body-expanded');
+    })
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

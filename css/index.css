@@ -1,0 +1,538 @@
+:root {
+    --width: 300px;
+    --padding: 10px;
+    --bgcolor: #101010;
+    --hovercolor: rgb(23,23,23);
+    --width-collapsed: 50px;
+}
+
+body {
+    background-color: #101010;
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    margin-left: var(--width-collapsed);
+}
+
+.body-expanded {
+    margin-left: var(--width);
+}
+
+#sidemenu {
+    background-color: var(--bgcolor);
+    color: white;
+    position: fixed;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#sidemenu a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HEADER */
+#sidemenu #header {
+    box-sizing: border-box;
+    border-bottom: solid 1px var(--hovercolor);
+}
+
+#sidemenu #header #title {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#sidemenu #header #title, 
+#sidemenu #header #menu-btn {
+    vertical-align: middle;
+}
+
+#sidemenu #header #menu-btn {
+    display: inline-block;
+}
+
+#sidemenu #header #menu-btn {
+    cursor: pointer;
+    padding: 10px;
+    width: var(--width-collapsed);
+    box-sizing: border-box;
+}
+
+#sidemenu #header #menu-btn:hover {
+    background-color: var(--hovercolor);
+}
+
+#sidemenu #header #menu-btn .btn-hamburger{
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
+}
+
+/* PROFILE */
+#sidemenu #profile {
+    border-bottom: solid 1px var(--hovercolor);
+    padding: var(--padding) 0;
+    text-align: center;
+}
+
+#sidemenu #profile #photo {
+    box-sizing: border-box;
+    padding: var(--padding);
+    margin: 0 auto;
+}
+
+#sidemenu #profile #photo img {
+    border-radius: 50%;
+    width: 60%;
+}
+
+#sidemenu #profile #photo,
+#sidemenu #profile #name {
+    font-size: 24px;
+    padding: var(--padding) 0;
+    overflow: hidden;
+}
+
+
+/* ITEM */
+#sidemenu #menu-items {
+    overflow: hidden;
+}
+
+#sidemenu #menu-items .item {
+    width:  var(--width);
+    
+}
+
+#sidemenu #menu-items .item .icon {
+   display: inline-block;
+}
+
+#sidemenu #menu-items .item .icon,
+#sidemenu #menu-items .item .title {
+    font-size: 14px;
+    vertical-align: middle;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#sidemenu #menu-items .item a {
+    display: block; 
+}
+
+#sidemenu #menu-items .item.active a {
+    color: #101010;
+    display: block; 
+    background-color: #fff; 
+}
+
+
+#sidemenu #menu-items .item .icon {
+    box-sizing: border-box;
+    padding: var(--padding);
+    width: var(--width-collapsed);
+}
+
+#sidemenu #menu-items .item .icon img {
+    width: 100%;
+}
+
+#sidemenu #menu-items .item .title {
+    padding: var(--padding) 0;
+}
+
+#sidemenu #menu-items .item.separator {
+    height: 1px;
+    border-bottom: solid 1px var(--hovercolor);
+    margin: 15px 0;
+}
+
+.menu-expanded {
+    width: var(--width);
+    box-sizing: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.menu-expanded #header #title {
+    display: inline-block;
+    width: calc(100% - 50px);
+    margin-right: -5px;
+    padding: var(--padding);
+}
+
+.menu-expanded #header #title span {
+    width: calc(var(--width) - var(--width-collapsed) -5px);
+    overflow: hidden;
+    display: inline-block;
+}
+
+.menu-expanded #profile #photo {
+    width: 200px;
+}
+
+.menu-expanded #profile #name {
+    width: 100%;
+}
+
+.menu-collapsed  {
+   width: var(--width-collapsed);
+}
+
+.menu-collapsed #header #title {
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-collapsed #profile #name {
+    display: none;
+}
+
+.menu-collapsed .item {
+    width: 100px;
+}
+
+
+/* LLENAR GASTOS */
+.container.formulario  {
+    max-width: 800px;
+}
+
+#formulario,
+#formulario-presupuesto {
+    background-color: #fff;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+#formulario h4,
+#formulario-presupuesto h4 {
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 0.667px;
+    color: #262A41;
+}
+
+
+#formulario .form-floating input,
+#formulario .mes,
+#formulario .categoria,
+#formulario-presupuesto .form-floating input,
+#formulario-presupuesto .mes {
+  border-radius: 40px;
+  border: solid 4px #eaeaead6;
+}
+
+#formulario .form-floating label,
+#formulario .mes,
+#formulario .categoria,
+#formulario-presupuesto .form-floating label,
+#formulario-presupuesto .mes {
+    padding-left: 30px;
+    font-family: Poppins;
+  }
+
+#categoria h6 {
+    font-family: Poppins;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 0.667px;
+    color: #262A41;
+}
+
+#categoria p {
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 0.667px;
+    color: #262A41;
+}
+
+#formulario .insertar,
+#formulario .insertar-presupuesto,
+#formulario-presupuesto .insertar,
+#formulario-presupuesto .rellenar-gastos,
+#Todos-gastos .guardar-cambios {
+  background-color: #101010;
+  width: 200px;
+  font-family: Poppins;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  margin: 20px 0;
+
+}
+
+
+
+/* GASTOS MENSUALES */
+#main-container .row {
+    border-radius: 10px;
+    margin: 20px 200px;
+}
+
+#main-container .row #gastos-agregados {
+    background: white;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#main-container .row #meses-year {
+    background: rgb(220, 220, 220);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#gastos-agregados h2 {
+    color: #262A41;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 0.667px;
+}
+
+#gastos-agregados .agregar {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+#gastos-agregados .agregar:hover {
+    font-size: 41px;
+    color: #4a4c4f;
+}
+
+
+#gastos-agregados .fecha {
+    color: #101010;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.343px;
+}
+
+#gastos-agregados h1,
+#tabla-gastos-total .card-title {
+    color: #262A41;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 50px;
+    letter-spacing: 0.667px;
+}
+
+#Todos-gastos .circle {
+    background-color: #32A7E2;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+#Todos-gastos .circle i {
+    margin-top: 12px;
+    color: white;
+    font-size: 15px;
+}
+
+#Todos-gastos .gastos {
+    margin: 0 100px;
+}
+
+#Todos-gastos .fecha-registrado {
+    color: #262A41;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.3px;
+    margin: 0 100px;
+}
+
+
+#Todos-gastos .nombre {
+    color: #273240;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.343px;
+    font-family: Poppins;
+    
+}
+
+#Todos-gastos .hora {
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    color: #404852;
+}
+
+#Todos-gastos .monto-gastado {
+    color: #273240;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.343px;  
+}
+
+#Todos-gastos .btn-group .btn-primary {
+  background-color: #101010;
+  padding: 0 3px;
+  border: none;
+}
+
+#Todos-gastos .btn-group .btn-primary i {
+    padding: 0 3px;
+  }
+
+
+#meses-year h5 {
+    color: #262A41;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0.333px;
+}
+
+
+#meses-year .progress {
+    height: 10px;
+}
+
+#meses-year .mes {
+    margin: 0 20px;
+    margin-top: 10px;
+}
+
+.separator-fecha {
+    height: 1px;
+    border-bottom: solid 1px #DEDEDE;
+    margin: 10px 0;
+}
+
+
+/* TOTAL GASTOS */
+#tabla-gastos-total {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+#tabla-gastos-total .card-body {
+    margin: 0 20px;
+    border-radius: 20px;   
+}
+
+#tabla-gastos-total .table-bordered thead,
+#tabla-gastos-total .table-bordered tbody,
+#tabla-gastos-total .table-bordered tr,
+#tabla-gastos-total .table-bordered th,
+#tabla-gastos-total .table-bordered td {
+    border: 2px solid;
+}
+
+#tabla-gastos-total .card-title {
+    text-align: center;
+}
+
+#tabla-gastos-total th,
+#tabla-gastos-total tr {
+    text-align: center;
+    font-family: Poppins;
+}
+
+
+
+
+@media (max-width: 1400px) {
+    #main-container .row {
+        border-radius: 10px;
+        margin: 10px;
+    }
+
+    #Todos-gastos .gastos,
+    #Todos-gastos .fecha-registrado {
+        margin: 0 80px;
+        
+    }   
+}
+
+@media (max-width: 780px) {
+    #Todos-gastos .gastos,
+    #Todos-gastos .fecha-registrado {
+        margin: 0;
+        
+    } 
+    
+    #main-container .row #gastos-agregados {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+    
+    #main-container .row #meses-year {
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+}
+
+@media (max-width: 660px) {
+    .body-expanded {
+        margin-left: 0;
+    }
+    
+    .menu-expanded {
+        width: 100%;
+        box-sizing: 0 0 10px rgba(0,0,0,0.5);
+        z-index: 100;
+    }
+    
+    .menu-expanded #header #title {
+        display: inline-block;
+        width: calc(100% - 50px);
+        margin-right: -5px;
+        padding: var(--padding);
+    }
+    
+    .menu-expanded #header #title span {
+        width: calc(var(--width) - var(--width-collapsed) -5px);
+        overflow: hidden;
+        display: inline-block;
+    }
+    
+    .menu-expanded #profile #photo {
+        width: 200px;
+    }
+    
+    .menu-expanded #profile #name {
+        width: 100%;
+    }
+    
+}
+
+ 
+
